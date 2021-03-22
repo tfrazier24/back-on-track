@@ -1,0 +1,18 @@
+MVP Definition: 
+1. User can login/Register CHECK
+2. User can create a Goal through the create a goal button/form
+    -Will require creating a button on the main page (Home.js)
+    -Button will need to route to a goal form 
+    -Create the form to fill out 
+    -Once filled out the form will take the user to their personal page and add the goal
+3. User can add a Task for a goal from the goal section on their personal page	
+4. User can mark a task as complete
+5. When the task is complete their progress bar starts to fill up
+6. User can create a journal entry
+7. Save journal entry to personal profile page
+8. User can see their progress bar on the home page 
+9. Progress bar fills up when a task is complete 
+
+
+Where did you leave off?
+set up the login registration page still need to test and make sure it is working 
