@@ -4,7 +4,8 @@ import { Home } from "./Home"
 import { GoalProvider } from "./goal/GoalProvider"
 import { GoalList } from "./goal/GoalList"
 import { GoalForm } from "./goal/GoalForm"
-
+import { TaskForm } from "./task/TaskForm"
+import { TaskProvider } from "./task/TaskProvider"
 
 export const ApplicationViews = () => {
     return (
@@ -14,15 +15,17 @@ export const ApplicationViews = () => {
         <Route exact path="/">
             <Home />
         </Route>
-        
-        <GoalProvider>
-            <Route exact path="/goals">
-               <GoalList /> 
-            </Route>
-            <Route exact path="/goals/create">
-                <GoalForm />
-            </Route>
-        </GoalProvider>
+        <TaskProvider>
+            <GoalProvider>
+                <Route exact path="/goals">
+                    <GoalList />
+                    <TaskForm /> 
+                </Route>
+                <Route exact path="/goals/create">
+                    <GoalForm />
+                </Route>
+            </GoalProvider>
+        </TaskProvider>
         </>
 
     )

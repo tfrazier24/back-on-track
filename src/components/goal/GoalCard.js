@@ -7,3 +7,4 @@ export const GoalCard = ({goal}) => (
     {console.log(goal)}
   </section>
 );
+{/* <Link to={`/goals/detail/${goal.id}`}>{goal.description}</Link>; */}
