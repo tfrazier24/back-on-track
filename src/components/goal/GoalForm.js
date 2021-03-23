@@ -10,8 +10,7 @@ export const GoalForm = () => {
     const [goal, setGoal] =useState({
         description: "",
         // id: 0
-        date: 0,
-        userId: 0
+        date: 0
     })
     
     const history = useHistory()
@@ -25,12 +24,15 @@ export const GoalForm = () => {
         setGoal(newGoal)
     }
 
+
     const handleClickSaveGoal = (event) => {
         event.preventDefault() //This will oprevent the browser from submitting the form
         const description = goal.description
         if (description === "") {
             window.alert("Please add a description of your goal")
         } else {
+            // debugger
+            goal.userId = +localStorage.getItem("backOnTrack_user")
             addGoal(goal)
             .then(() => history.push("/goals"))
         }
@@ -51,7 +53,7 @@ export const GoalForm = () => {
               autoFocus
               className="form-control"
               placeholder="Description of goal"
-                value={goal.description}
+                // value={goal.description}
             />
           </div>
         </fieldset>
@@ -60,12 +62,12 @@ export const GoalForm = () => {
             <label htmlFor="date">Date: </label>
             <input
               type="date"
-              id="description"
+              id="date"
                 onChange={handleControlledInputChange}
               required
               autoFocus
               className="form-control"
-                value={goal.date}
+                // value={goal.date}
             />
           </div>
         </fieldset>
