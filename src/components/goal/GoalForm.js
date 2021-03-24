@@ -9,7 +9,6 @@ export const GoalForm = () => {
     //defining and setting the initial state of the form inputs with useState()
     const [goal, setGoal] =useState({
         description: "",
-        // id: 0
         date: 0
     })
     

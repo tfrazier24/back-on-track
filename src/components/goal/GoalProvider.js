@@ -23,10 +23,15 @@ export const GoalProvider = (props) => {
         .then(response => response.json())
     }
 
+    const getGoalById = (id) => {
+        return fetch(`http://localhost:8088/goals/${id}`)
+            .then(res => res.json())
+    }
+
     // exposing the different methods through the Context so they can be seen 
     return (
         <GoalContext.Provider value={{
-            goals, getGoals, addGoal
+            goals, getGoals, addGoal, getGoalById
         }}>
             {props.children}
         </GoalContext.Provider>

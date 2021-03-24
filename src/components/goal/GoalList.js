@@ -8,20 +8,23 @@ export const GoalList = () => {
     const { goals, getGoals } = useContext(GoalContext)
     // const [ goals, setGoals ] = useState()
 
-    
+
     //this will reach out and fetch all of the goals and render them 
     useEffect(() => {
         getGoals()
     }, [])
 
+    // const history = useHistory()
+
     return (
-        <>
+      <>
         <h2>Goals</h2>
         <div className="goals">
-            {goals.map((goal) => {
-                return <GoalCard key={goal.id} goal={goal} />
-            })}
+          {goals.map((goal) => {
+            return <GoalCard key={goal.id} goal={goal} />;
+          })}
         </div>
-        </>
-    )
+        {/* <button onClick={() => history.push("/goals/details")}>Add Task</button> */}
+      </>
+    );
 }
