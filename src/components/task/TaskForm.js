@@ -7,7 +7,7 @@ export const TaskForm = () => {
 
     const { addTask } = useContext(TaskContext)
 
-    // const goalId = 
+    // const { goalId } = useParams()
 
     const [task, setTask] = useState({
         name:"",
