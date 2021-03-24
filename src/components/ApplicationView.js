@@ -5,28 +5,29 @@ import { GoalProvider } from "./goal/GoalProvider"
 import { GoalList } from "./goal/GoalList"
 import { GoalForm } from "./goal/GoalForm"
 import { TaskForm } from "./task/TaskForm"
-import { TaskProvider } from "./task/TaskProvider"
+import { TaskContext, TaskProvider } from "./task/TaskProvider"
+import { GoalDetail } from "./goal/GoalDetail"
 
 export const ApplicationViews = () => {
     return (
-
-        <>
-        
+      <>
         <Route exact path="/">
-            <Home />
+          <Home />
         </Route>
         <TaskProvider>
-            <GoalProvider>
-                <Route exact path="/goals">
-                    <GoalList />
-                    <TaskForm /> 
-                </Route>
-                <Route exact path="/goals/create">
-                    <GoalForm />
-                </Route>
-            </GoalProvider>
+          <GoalProvider>
+            <Route exact path="/goals">
+              <GoalList />
+            </Route>
+            <Route exact path="/goals/create">
+              <GoalForm />
+            </Route>
+            <Route exact path="/goals/details/:goalId(\d+)">
+              <GoalDetail />
+              <TaskForm />
+            </Route>
+          </GoalProvider>
         </TaskProvider>
-        </>
-
-    )
+      </>
+    );
 }

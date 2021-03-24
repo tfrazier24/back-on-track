@@ -7,10 +7,12 @@ export const TaskForm = () => {
 
     const { addTask } = useContext(TaskContext)
 
+    // const goalId = 
+
     const [task, setTask] = useState({
         name:"",
-        // date: 0,
-        // goalId: 0
+        date: 0,
+        goalId: 0
     })
 
 
@@ -29,12 +31,12 @@ export const TaskForm = () => {
     const handleClickSaveTask = (event) => {
         event.preventDefault()
         
-        if (task === "") {
+        if (task.name === "") {
             window.alert("Please add a task")
         } else {
             task.userId = +localStorage.getItem("backOnTrack_user")
             addTask(task)
-            .then(() => history.pushState("/goals"))
+            .then(() => history.push("/goals"))
         }
     }
 
@@ -47,7 +49,7 @@ export const TaskForm = () => {
           <div className="form_group">
             <input
               type="text"
-              id="task_name"
+              id="name"
               onChange={handleControlledInputChange}
               required
               autoFocus

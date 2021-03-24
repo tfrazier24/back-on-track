@@ -16,4 +16,3 @@ MVP Definition:
 
 
 Where did you leave off?
-Working on the goal form. ran into an issue with the date printing into the goal section of the form  

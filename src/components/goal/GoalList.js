@@ -14,6 +14,8 @@ export const GoalList = () => {
         getGoals()
     }, [])
 
+    // const history = useHistory()
+
     return (
       <>
         <h2>Goals</h2>
@@ -22,6 +24,7 @@ export const GoalList = () => {
             return <GoalCard key={goal.id} goal={goal} />;
           })}
         </div>
+        {/* <button onClick={() => history.push("/goals/details")}>Add Task</button> */}
       </>
     );
 }
