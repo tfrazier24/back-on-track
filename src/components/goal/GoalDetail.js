@@ -21,7 +21,7 @@ export const GoalDetail = () => {
 
   return (
     <section className="goal">
-      <h3 className="goal__name">{goal.description}</h3>
+      <h1 className="goal__name">{goal.description}</h1>
       <div className="goal__date">{goal.date}</div>
     </section>
   );
