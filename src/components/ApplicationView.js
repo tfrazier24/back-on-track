@@ -25,7 +25,7 @@ export const ApplicationViews = () => {
             </Route>
             <Route exact path="/goals/details/:goalId(\d+)">
               <GoalDetail />
-              <TaskList />
+              {/* <TaskList /> */}
               <TaskForm />
             </Route>
           </GoalProvider>

@@ -6,15 +6,11 @@ import "./Goal.css"
 
 export const GoalList = () => {
     const { goals, getGoals } = useContext(GoalContext)
-    // const [ goals, setGoals ] = useState()
-
-
     //this will reach out and fetch all of the goals and render them 
     useEffect(() => {
         getGoals()
     }, [])
 
-    // const history = useHistory()
 
     return (
       <>
@@ -24,7 +20,6 @@ export const GoalList = () => {
             return <GoalCard key={goal.id} goal={goal} />;
           })}
         </div>
-        {/* <button onClick={() => history.push("/goals/details")}>Add Task</button> */}
       </>
     );
 }
