@@ -6,13 +6,23 @@ MVP Definition:
     -Create the form to fill out CHECK
     -Once filled out the form will take the user to their personal page and add the goal CHECK
     
-3. User can add a Task for a goal from the goal section on their personal page	
+3. User can add a Task for a goal from the goal section on their personal page CHECK
 4. User can mark a task as complete
-5. When the task is complete their progress bar starts to fill up
-6. User can create a journal entry
-7. Save journal entry to personal profile page
+5. create a progress bar for goals
+6. When the task is complete their progress bar starts to fill up
 8. User can see their progress bar on the home page 
 9. Progress bar fills up when a task is complete 
 
 
 Where did you leave off?
+patch in dataprovider
+function to run when you click the completed button
+whether or not to hide the task
+
+
+
+
+
+
+SG. User can create a journal entry
+SG. Save journal entry to personal profile page

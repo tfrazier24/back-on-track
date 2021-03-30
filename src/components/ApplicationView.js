@@ -7,6 +7,7 @@ import { GoalForm } from "./goal/GoalForm"
 import { TaskForm } from "./task/TaskForm"
 import { TaskContext, TaskProvider } from "./task/TaskProvider"
 import { GoalDetail } from "./goal/GoalDetail"
+import { TaskList } from "./task/TaskList"
 
 export const ApplicationViews = () => {
     return (
@@ -24,6 +25,7 @@ export const ApplicationViews = () => {
             </Route>
             <Route exact path="/goals/details/:goalId(\d+)">
               <GoalDetail />
+              {/* <TaskList /> */}
               <TaskForm />
             </Route>
           </GoalProvider>

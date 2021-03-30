@@ -22,11 +22,42 @@ export const TaskProvider = (props) => {
     .then(response => response.json())
     }
 
+    const getTaskById = (id) => {
+        return fetch(`http://localhost:8088/tasks/${id}`)
+            .then(res => res.json())
+    }
+
+    const getAllTaskByGoalId = (id) => {
+      return fetch(`http://localhost:8088/tasks?goalId=${id}`).then((res) =>
+        res.json()
+      );
+    };
+
+    const completeTask = task => {
+        return fetch(`http://localhost:8088/tasks/${task.id}`, {
+        method: "PATCH",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            completed: true
+        })
+    })
+        .then(() => getAllTaskByGoalId(task.goalId))
+    }
+
     return (
-        <TaskContext.Provider value={{
-            tasks, getTasks, addTask
-        }}>
-            {props.children}
-        </TaskContext.Provider>
-    )
+      <TaskContext.Provider
+        value={{
+          tasks,
+          getTasks,
+          addTask,
+          getTaskById,
+          getAllTaskByGoalId,
+          completeTask
+        }}
+      >
+        {props.children}
+      </TaskContext.Provider>
+    );
 }

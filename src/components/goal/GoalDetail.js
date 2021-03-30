@@ -2,13 +2,22 @@ import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "./GoalProvider";
 import "./Goal.css";
 import { useParams, useHistory } from "react-router-dom";
+import { TaskContext } from "../task/TaskProvider"
+import { TaskCard } from "../task/TaskCard"
+import { TaskList } from "../task/TaskList";
 
-export const GoalDetail = () => {
+export const GoalDetail = ({}) => {
+    // useContext is grabbing the functions from their data providers and allowing us to use it
   const { getGoalById } = useContext(GoalContext);
+  const {  getAllTaskByGoalId, completeTask, getTaskById} = useContext(TaskContext);
+
+
+  const [filteredTask, setFiltered] = useState([])
 
   const [goal, setGoal] = useState({});
 
-  const { goalId } = useParams();
+  const { goalId, taskId } = useParams();
+
 
   const history = useHistory();
 
@@ -16,13 +25,37 @@ export const GoalDetail = () => {
     console.log("useEffect", goalId);
     getGoalById(goalId).then((response) => {
       setGoal(response);
-    });
-  }, []);
+    }).then(() => {
+        getAllTaskByGoalId(goalId).then((response) => {
+      
+          setFiltered(response);
+        });
+})}, []);
+
+
+    const handleComplete = (task) => {
+        completeTask(task).then((response) => {
+      
+          setFiltered(response);
+        });
+
+    }
 
   return (
     <section className="goal">
-      <h3 className="goal__name">{goal.description}</h3>
+      <h1 className="goal__name">{goal.description}</h1>
       <div className="goal__date">{goal.date}</div>
+      <div className="task__name">
+        {filteredTask.filter(task => task.completed === false).map((task) => { 
+            return (      
+          <li>
+            <TaskCard key={task.id} task={task} handleComplete={handleComplete} />
+           
+          </li>
+            )
+            }
+        )}
+      </div>
     </section>
   );
 };
