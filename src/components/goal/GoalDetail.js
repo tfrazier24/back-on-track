@@ -46,6 +46,7 @@ export const GoalDetail = ({}) => {
       <h1 className="goal__name">{goal.description}</h1>
       <div className="goal__date">{goal.date}</div>
       <div className="task__name">
+        <h3>Tasks</h3>
         {filteredTask.filter(task => task.completed === false).map((task) => { 
             return (      
           <li>

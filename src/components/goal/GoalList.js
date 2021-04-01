@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { GoalContext } from "./GoalProvider";
 import { GoalCard } from "./GoalCard"
 import "./Goal.css"
+import ProgressBar from "react-bootstrap/ProgressBar"
+
 
 export const GoalList = () => {
     const { goals, getGoals } = useContext(GoalContext)
@@ -20,6 +22,7 @@ export const GoalList = () => {
             return <GoalCard key={goal.id} goal={goal} />;
           })}
         </div>
+        
       </>
     );
 }
