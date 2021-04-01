@@ -1,0 +1,7 @@
+.progress-bar{
+    background-color: black;
+}
+
+#progress::-webkit-progress-value {
+    background-color: rgba(89, 159, 216, 0.938)
+}
