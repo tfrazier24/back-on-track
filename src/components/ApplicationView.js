@@ -8,7 +8,7 @@ import { TaskForm } from "./task/TaskForm"
 import { TaskContext, TaskProvider } from "./task/TaskProvider"
 import { GoalDetail } from "./goal/GoalDetail"
 import { TaskList } from "./task/TaskList"
-
+import "./task/Task.css"
 export const ApplicationViews = () => {
     return (
       <>
@@ -24,9 +24,10 @@ export const ApplicationViews = () => {
               <GoalForm />
             </Route>
             <Route exact path="/goals/details/:goalId(\d+)">
+              <div id="detail_container">
               <GoalDetail />
-              {/* <TaskList /> */}
               <TaskForm />
+              </div>
             </Route>
           </GoalProvider>
         </TaskProvider>

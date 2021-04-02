@@ -14,6 +14,8 @@ export const GoalForm = () => {
     
     const history = useHistory()
 
+    //controlled component
+    //this will allow us to change and update state
     const handleControlledInputChange = (event) => {
         //this variable will make a copy of state and then set state
         const newGoal = { ...goal }
@@ -23,14 +25,13 @@ export const GoalForm = () => {
         setGoal(newGoal)
     }
 
-
+    // this function will save a goal if the condition is met and push it to the goals route
     const handleClickSaveGoal = (event) => {
         event.preventDefault() //This will oprevent the browser from submitting the form
         const description = goal.description
         if (description === "") {
             window.alert("Please add a description of your goal")
         } else {
-            // debugger
             goal.userId = +localStorage.getItem("backOnTrack_user")
             addGoal(goal)
             .then(() => history.push("/goals"))

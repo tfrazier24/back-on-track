@@ -1,7 +1,9 @@
-.progress-bar{
-    background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+div{
+    font-family: 'Ubuntu', sans-serif;
+}
+.task__name{
+    margin-top: 5em;
 }
 
-#progress::-webkit-progress-value {
-    background-color: rgba(89, 159, 216, 0.938)
-}

@@ -11,7 +11,7 @@ export const GoalDetail = ({}) => {
   const { getGoalById } = useContext(GoalContext);
   const {  getAllTaskByGoalId, completeTask, getTaskById} = useContext(TaskContext);
 
-
+  //setting the initial state
   const [filteredTask, setFiltered] = useState([])
 
   const [goal, setGoal] = useState({});
@@ -44,7 +44,7 @@ export const GoalDetail = ({}) => {
   return (
     <section className="goal">
       <h1 className="goal__name">{goal.description}</h1>
-      <div className="goal__date">{goal.date}</div>
+      <div className="goal__date">You created this goal on: {goal.date}</div>
       <div className="task__name">
         <h3>Tasks</h3>
         {filteredTask.filter(task => task.completed === false).map((task) => { 
