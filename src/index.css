@@ -1,3 +1,20 @@
+* {
+  /* CSS HEX */
+--light-gray: #dad2d8ff;
+--gunmetal: #143642ff;
+--dark-cyan: #0f8b8dff;
+--carrot-orange: #ec9a29ff;
+--carnelian: #a8201aff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+
+#mainContainer{
+  background-color: var(--light-gray);
+  height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +28,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+

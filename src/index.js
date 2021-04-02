@@ -9,7 +9,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <BackOnTrack />
+      <div id="mainContainer">
+        <BackOnTrack />
+      </div>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

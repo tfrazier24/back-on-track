@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+.navbar{
+    background-color: var(--gunmetal);
+}
+
+li{
+    list-style: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar__link{
+    color: whitesmoke   !important;
+}
+
