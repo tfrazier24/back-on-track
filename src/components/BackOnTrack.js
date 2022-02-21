@@ -1,7 +1,7 @@
 import React from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationView"
-import { Route, Redirect } from "react-router-dom"
+import { Route, Navigate } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 
@@ -17,7 +17,7 @@ export const BackOnTrack = () => (
             </>
           );
         } else {
-          return <Redirect to="/login" />;
+          return <Navigate to="/login" />;
         }
       }}
     />

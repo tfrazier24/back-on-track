@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GoalContext } from "./GoalProvider"
 import "./Goal.css"
-import { useHistory, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 export const GoalForm = () => {
     const { addGoal } = useContext(GoalContext)
@@ -12,7 +12,7 @@ export const GoalForm = () => {
         date: 0
     })
     
-    const history = useHistory()
+    const navigate = useNavigate()
 
     //controlled component
     //this will allow us to change and update state
@@ -34,7 +34,7 @@ export const GoalForm = () => {
         } else {
             goal.userId = +localStorage.getItem("backOnTrack_user")
             addGoal(goal)
-            .then(() => history.push("/goals"))
+            .then(() => navigate.push("/goals"))
         }
 
     }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "./GoalProvider";
 import "./Goal.css";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { TaskContext } from "../task/TaskProvider"
 import { TaskCard } from "../task/TaskCard"
 import { TaskList } from "../task/TaskList";
@@ -19,7 +19,7 @@ export const GoalDetail = ({}) => {
   const { goalId, taskId } = useParams();
 
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("useEffect", goalId);
