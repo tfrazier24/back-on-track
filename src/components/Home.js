@@ -12,7 +12,7 @@ return (
       <p>
         <button
           onClick={() => {
-            navigate.push("goals/create");
+            navigate("goals/create");
           }}
         >
           Create a Goal!

@@ -14,9 +14,14 @@ export const BackOnTrack = () => (
       <TaskProvider>
         <GoalProvider>
           <ApplicationView />
-          {/* 
-    <Route path="/login" element={<Login />}> </Route>
-    <Route path="/register" element={<Register />}> </Route> */}
+          <Routes>
+            <Route path="/login" element={<Login />}>
+              {" "}
+            </Route>
+            <Route path="/register" element={<Register />}>
+              {" "}
+            </Route>
+          </Routes>
         </GoalProvider>
       </TaskProvider>
     </Router>
