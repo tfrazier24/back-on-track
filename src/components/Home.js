@@ -7,6 +7,7 @@ export const Home = () => {
 
 return (
   <>
+  <div>
       <h1>Back on Track</h1>
       <p>
         <button
@@ -17,6 +18,7 @@ return (
           Create a Goal!
         </button>
       </p>
+      </div>
   </>
 );
 }
