@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export const Login = (props) => {
   const email = useRef();
   const password = useRef();
   const existDialog = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const existingUserCheck = () => {
     return fetch(`http://localhost:8088/users?email=${email.current.value}`)
@@ -21,7 +21,7 @@ export const Login = (props) => {
     existingUserCheck().then((exists) => {
       if (exists) {
         localStorage.setItem("backOnTrack_customer", exists.id);
-        history.push("/");
+        navigate.push("/");
       } else {
         existDialog.current.showModal();
       }

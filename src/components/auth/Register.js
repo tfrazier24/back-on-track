@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export const Register = (props) => {
@@ -8,7 +8,7 @@ export const Register = (props) => {
   const email = useRef();
   //   const verifyPassword = useRef();
   const conflictDialog = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const existingUserCheck = () => {
     return fetch(`http://localhost:8088/users?email=${email.current.value}`)
@@ -35,7 +35,7 @@ export const Register = (props) => {
           .then((createdUser) => {
             if (createdUser.hasOwnProperty("id")) {
               localStorage.setItem("backOnTrack_user", createdUser.id);
-              history.push("/");
+              navigate.push("/");
             }
           });
       } else {

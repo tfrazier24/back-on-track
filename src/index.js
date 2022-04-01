@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BackOnTrack } from './components/BackOnTrack';
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <div id="mainContainer">
+  
+     
         <BackOnTrack />
-      </div>
-    </Router>
+      
+    
   </React.StrictMode>,
   document.getElementById("root")
 );

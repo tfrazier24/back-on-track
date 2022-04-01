@@ -1,25 +1,24 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
-import Jumbotron from "react-bootstrap/Jumbotron";
+import React from "react";
+import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-    
-    const history = useHistory()
+  const navigate = useNavigate();
 
-return (
-  <>
-    <Jumbotron>
-      <h1>Back on Track</h1>
-      <p>
-        <button
-          onClick={() => {
-            history.push("goals/create");
-          }}
-        >
-          Create a Goal!
-        </button>
-      </p>
-    </Jumbotron>
-  </>
-);
-}
+  return (
+    <>
+      <div className="homepage-container">
+        <h1>Back on Track</h1>
+        <p>
+          <button className="create-goal"
+            onClick={() => {
+              navigate("goals/create");
+            }}
+          >
+            Create a Goal!
+          </button>
+        </p>
+      </div>
+    </>
+  );
+};

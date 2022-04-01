@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Task.css"
-import { useHistory, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { TaskContext } from "./TaskProvider"
 
 export const TaskForm = () => {
@@ -25,7 +25,7 @@ export const TaskForm = () => {
         setTask(newTask)
     }
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const handleClickSaveTask = (event) => {
         event.preventDefault()
@@ -36,7 +36,7 @@ export const TaskForm = () => {
           task.goalId = +goalId
             task.userId = +localStorage.getItem("backOnTrack_user")
             addTask(task)
-            .then(() => history.push("/goals"))
+            .then(() => navigate.push("/goals"))
         }
     }
 
