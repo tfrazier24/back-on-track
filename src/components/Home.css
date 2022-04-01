@@ -1,4 +1,12 @@
-.homepage-container{
-    justify-content: center;
-    justify-content: space-around;
+.homepage {
+    background-color: green;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.homepage_container {
+    display: flex;
+    align-items: center;
+    
 }
