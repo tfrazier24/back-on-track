@@ -19,5 +19,6 @@
     margin: auto;
     border-style: solid;
     background: var(--carrot-orange);
+    filter: drop-shadow(2px 4px 8px);
+    border-radius: 2em;
 }
-

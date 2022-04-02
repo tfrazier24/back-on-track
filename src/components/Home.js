@@ -9,7 +9,6 @@ export const Home = () => {
   return (
     <>
       <div className="homepage">
-        <div className="homepage_container">
           <h1>Back on Track</h1>
           
             <button
@@ -21,7 +20,6 @@ export const Home = () => {
             >
               Create a Goal!
             </button>
-        </div>
       </div>
     </>
   );

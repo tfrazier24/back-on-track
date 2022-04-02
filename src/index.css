@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 
-#mainContainer{
+#main_container{
   background-color: var(--light-gray);
   height: 100vh;
 }
@@ -22,6 +22,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+
 }
 
 code {
