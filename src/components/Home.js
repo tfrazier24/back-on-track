@@ -10,8 +10,9 @@ export const Home = () => {
     <>
       <div className="homepage">
           <h1>Back on Track</h1>
-          
-            <button
+            <div className="button_div">
+              <button
+            id="create_goal_button"
               className="create-goal"
               type="button"
               onClick={() => {
@@ -20,6 +21,8 @@ export const Home = () => {
             >
               Create a Goal!
             </button>
+            </div>
+            
       </div>
     </>
   );
