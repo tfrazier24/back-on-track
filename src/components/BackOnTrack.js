@@ -9,7 +9,7 @@ import { TaskProvider } from "./task/TaskProvider";
 import { GoalProvider } from "./goal/GoalProvider";
 
 export const BackOnTrack = () => (
-  <>
+  <div id="main_container">
     <Router>
       <TaskProvider>
         <GoalProvider>
@@ -25,7 +25,7 @@ export const BackOnTrack = () => (
         </GoalProvider>
       </TaskProvider>
     </Router>
-  </>
+  </div>
 );
 
 {

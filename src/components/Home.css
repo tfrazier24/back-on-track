@@ -1,4 +1,37 @@
-.homepage-container{
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+* {
+    /* CSS HEX */
+  --light-gray: #dad2d8ff;
+  --gunmetal: #143642ff;
+  --dark-cyan: #0f8b8dff;
+  --carrot-orange: #ec9a29ff;
+  --carnelian: #a8201aff;
+  }
+
+.homepage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4em;
+    border: 3px;
+    border-color: var(--gunmetal);
+    margin: auto;
+    border-style: solid;
+    background: var(--carrot-orange);
+    filter: drop-shadow(1px 2px 4px);
+    border-radius: 2em;
+    font-size: small;
+    white-space: nowrap;
+}
+
+.button_div {
+    display: flex;
     justify-content: center;
-    justify-content: space-around;
+}
+
+#create_goal_button {
+    background-color: var(--light-gray);
+    border-style: solid;
+    border-radius: 2em;
 }

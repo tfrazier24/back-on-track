@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "bootstrap";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
@@ -7,17 +8,21 @@ export const Home = () => {
 
   return (
     <>
-      <div className="homepage-container">
-        <h1>Back on Track</h1>
-        <p>
-          <button className="create-goal"
-            onClick={() => {
-              navigate("goals/create");
-            }}
-          >
-            Create a Goal!
-          </button>
-        </p>
+      <div className="homepage">
+          <h1>Back on Track</h1>
+            <div className="button_div">
+              <button
+            id="create_goal_button"
+              className="create-goal"
+              type="button"
+              onClick={() => {
+                navigate("goals/create");
+              }}
+            >
+              Create a Goal!
+            </button>
+            </div>
+            
       </div>
     </>
   );
