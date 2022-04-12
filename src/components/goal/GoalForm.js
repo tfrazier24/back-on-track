@@ -40,6 +40,7 @@ export const GoalForm = () => {
     }
 
     return (
+      <div className="formContainer">
       <form className="goalForm">
         <h2>New Goal</h2>
         <fieldset>
@@ -71,9 +72,13 @@ export const GoalForm = () => {
             />
           </div>
         </fieldset>
-        <button className="btn btn-primary"
+        
+      </form>
+      <div className="buttonContainer">
+        <button className="addGoalButton"
         onClick={handleClickSaveGoal}
         >Add new Goal!</button>
-      </form>
+        </div>
+      </div>
     );
 }
